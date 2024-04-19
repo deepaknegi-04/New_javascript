@@ -34,6 +34,32 @@ let obj = {
 }
 
 // console.log(obj.name);
-console.log(typeof (myfunc)); // called object function
-console.log(typeof (heros)); // object 
+//console.log(typeof (myfunc)); // called object function
+//console.log(typeof (heros)); // object 
 
+
+// +++++++++++++++++++++++++++++++
+
+//Stack(Primitive) , Heap (Non-Primitive)
+
+// Stack ex-
+let myname = "name";
+
+let anothername = myname
+anothername = "john"
+
+// console.log(myname);
+// console.log(anothername);
+
+// Heap ex-
+
+let user1 = {
+    email:"user.google.com",
+    id:123
+}
+
+let user2 = user1
+
+user2.id = 90
+
+console.log(user1.id);
