@@ -55,9 +55,42 @@ const users = [
 ]
 
 users[1].email
-console.log(tinderUser);
+// console.log(tinderUser);
 
-console.log(Object.keys(tinderUser)); //Return array
-console.log(Object.values(tinderUser)); //Return array
-console.log(Object.entries(tinderUser));// Array inside array
-console.log(tinderUser.hasOwnProperty("id"));// check if given property is in object
+// console.log(Object.keys(tinderUser)); //Return array
+// console.log(Object.values(tinderUser)); //Return array
+// console.log(Object.entries(tinderUser));// Array inside array
+// console.log(tinderUser.hasOwnProperty("id"));// check if given property is in object
+
+//DeStructuring in object 
+
+const course = {
+    coursename:"js Hindi",
+    price:"999",
+    crouseInstructor:"John"
+}
+
+//course.courseInstructro  //basic syntax to access 
+
+//another syntax
+// const {crouseInstructor} = course  
+
+const {crouseInstructor: instructor} = course //if we want to change its name to make is more accessible
+
+console.log(instructor);
+
+
+//API Brief Introduction
+
+// Object Format
+// {
+//     "name":"Johnson",
+//     "coursename":"Js in hindi",
+//     "price":"free"
+// }
+
+//Array Format
+[
+    {},
+    {}
+]
