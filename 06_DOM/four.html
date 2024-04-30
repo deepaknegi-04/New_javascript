@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM </title>
+</head>
+
+<body style="background-color: rgb(41, 36, 36); color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+
+
+    <script>
+        function addLanguage(langName) {
+            const li = document.createElement('li');
+            li.innerHTML = `${langName}`;
+            document.querySelector('.language').appendChild(li);
+        }
+        addLanguage("python");
+        addLanguage("Java");
+
+        // another way in optimize way [no need to traverse whole tree] here
+
+        function addLangOptiWay(langName) {
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(langName));
+            document.querySelector(".language").appendChild(li)
+        }
+
+        addLangOptiWay("jsn");
+
+
+        //Edit 
+        const secondLang = document.querySelector('li:nth-child(2)')
+        //  secondLang.innerHTML ="mojo" // no-optimization
+
+        const newLi = document.createElement('li');
+        newLi.textContent = "New Li";
+        secondLang.replaceWith(newLi);
+
+        //Edit
+
+        const FirstLang = document.querySelector('li:first-child')
+        FirstLang.outerHTML = '<li>Typescript</li>'
+
+        //remove
+        const lastLang = document.querySelector("li:last-child");
+        lastLang.remove()
+        
+    </script>
+</body>
+
+</html>
