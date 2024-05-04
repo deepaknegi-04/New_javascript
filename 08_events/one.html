@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Basic</title>
+</head>
+<bod style="background-color: #414141; color: aliceblue;">
+    <h2>Images</h2>
+    <div>
+        <ul id="images">
+            <li><img id="photoshop" width="200px"
+                    src="https://images.pexels.com/photos/17960586/pexels-photo-17960586/free-photo-of-sandy-basketball-court.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt="photoshop"></li>
+
+
+            <!-- <li><img id="ground" width="200px" src="https://images.pexels.com/photos/22484288/pexels-photo-22484288/free-photo-of-the-circular-stone-terraces-of-the-inca-ruins.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" onclick="alert  ('ground')";></li> 
+                NOTE : Not a good approach to use onclick here -->
+
+            <li><img id="ground" width="200px"
+                    src="https://images.pexels.com/photos/22484288/pexels-photo-22484288/free-photo-of-the-circular-stone-terraces-of-the-inca-ruins.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt="" ;></li>
+
+            <li><img id="flowers" width="200px"
+                    src="https://images.pexels.com/photos/20748970/pexels-photo-20748970/free-photo-of-a-field-of-sunflowers-with-many-yellow-flowers.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt=""></li>
+
+            <li><img id="birds" width="200px"
+                    src="https://images.pexels.com/photos/18348350/pexels-photo-18348350/free-photo-of-decorative-cyanotype-design.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt=""></li>
+
+            <li><a style="color: black;" href="www.google.com" id="google"> Google</a></li>
+        </ul>
+    </div>
+    </body>
+    <script>
+        //NOTE: js is sequentially run language
+
+        // document.getElementById('ground').onclick = function(){
+        //     alert("ground clicked");
+        // }
+
+        // Better and modern way to do this
+
+        // document.getElementById('ground').addEventListener('click', function(){},false)
+
+
+        // document.getElementById('ground').addEventListener('click', function(){
+        // alert("Ground Clicked Again")
+        // })
+
+        // Anothr Approaches
+
+        // attachEvent()  -> Early time
+        // Jquery -> on   -> [framework] 
+
+        //Topics -> type, timestamp, defaultPrevent, target, toElement, [srcElement], currentTarget
+        // clientx , clienty, screenx, screeny
+        // altkey, ctrlKey, shiftKey, keyCode
+
+
+        // document.getElementById('ground').addEventListener('click', function(event){
+        // console.log(event);
+        // }, false) // <--- event propagation
+        // [1] -> event public
+        // [2] -> event capturing
+
+        // document.getElementById('images').addEventListener('click', function(event){
+        //     console.log("click inside the ul");
+        // },false); // false by default // bottom to top
+
+        // document.getElementById('birds').addEventListener('click', function(event){
+        //     console.log("Birds clicked");
+        //     event.stopPropagation()
+        // },false); //capturing mode when it is true 
+        // // top to down   
+        // // depends on usecase
+
+        // document.getElementById('google').addEventListener('click', function(event){
+        //     event.preventDefault()
+        //     event.stopPropagation()
+        //     console.log("google clicked");
+        // }, false)
+
+
+        //Activity
+
+        // when click on image they should be hide
+
+        document.querySelector('#images').addEventListener('click', function (event) {
+            // console.log(event.target.parentNode);
+            console.log(event.target.tagName);
+            if (event.target.tagName === 'IMG') { // checks for removing only images
+                console.log(event.target.id);
+                let remove = event.target.parentNode
+                remove.remove()
+            }
+
+            // remove.parentNode.removeChild(remove);
+
+        }, false)
+
+
+    </script>
+
+</html>

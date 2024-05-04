@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Code with Chai</h1>
+    <button id="stop"> stop </button>
+</body>
+<script>
+    const sayjohn = function(){
+        console.log("john");
+    }
+    // document.querySelector('h1').innerHTML = "best js course" // if we want that this change should be afer some time
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best js course"
+    } // when we want to stop this event
+     const  changeMe = setTimeout(changeText, 2000)
+
+    // clearTimeout(changeMe) 
+
+    document.querySelector('#stop').addEventListener('click', ()=>{
+        clearTimeout(changeMe)
+        console.log("Stopped");
+    })
+</script>
+</html>
